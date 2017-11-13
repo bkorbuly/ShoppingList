@@ -1,0 +1,13 @@
+C:\Users\Balazs\Greenfox\Week_10\ShoppingList\ShoppingList.Test\bin\Debug\netcoreapp2.0\ShoppingList.dll
+C:\Users\Balazs\Greenfox\Week_10\ShoppingList\ShoppingList.Test\obj\Debug\netcoreapp2.0\ShoppingList.Test.csprojResolveAssemblyReference.cache
+C:\Users\Balazs\Greenfox\Week_10\ShoppingList\ShoppingList.Test\obj\Debug\netcoreapp2.0\ShoppingList.Test.csproj.CoreCompileInputs.cache
+C:\Users\Balazs\Greenfox\Week_10\ShoppingList\ShoppingList.Test\obj\Debug\netcoreapp2.0\ShoppingList.Test.AssemblyInfoInputs.cache
+C:\Users\Balazs\Greenfox\Week_10\ShoppingList\ShoppingList.Test\obj\Debug\netcoreapp2.0\ShoppingList.Test.AssemblyInfo.cs
+C:\Users\Balazs\Greenfox\Week_10\ShoppingList\ShoppingList.Test\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\Balazs\Greenfox\Week_10\ShoppingList\ShoppingList.Test\bin\Debug\netcoreapp2.0\xunit.runner.utility.netstandard15.dll
+C:\Users\Balazs\Greenfox\Week_10\ShoppingList\ShoppingList.Test\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netstandard15.dll
+C:\Users\Balazs\Greenfox\Week_10\ShoppingList\ShoppingList.Test\bin\Debug\netcoreapp2.0\ShoppingList.Test.deps.json
+C:\Users\Balazs\Greenfox\Week_10\ShoppingList\ShoppingList.Test\bin\Debug\netcoreapp2.0\ShoppingList.Test.runtimeconfig.json
+C:\Users\Balazs\Greenfox\Week_10\ShoppingList\ShoppingList.Test\bin\Debug\netcoreapp2.0\ShoppingList.Test.runtimeconfig.dev.json
+C:\Users\Balazs\Greenfox\Week_10\ShoppingList\ShoppingList.Test\bin\Debug\netcoreapp2.0\ShoppingList.Test.dll
+C:\Users\Balazs\Greenfox\Week_10\ShoppingList\ShoppingList.Test\bin\Debug\netcoreapp2.0\ShoppingList.pdb
