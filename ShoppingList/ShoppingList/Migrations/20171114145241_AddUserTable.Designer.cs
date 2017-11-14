@@ -8,9 +8,10 @@ using ShoppingList.Entities;
 namespace ShoppingList.Migrations
 {
     [DbContext(typeof(ShoppingListContext))]
-    partial class ShoppingListContextModelSnapshot : ModelSnapshot
+    [Migration("20171114145241_AddUserTable")]
+    partial class AddUserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
@@ -30,8 +31,6 @@ namespace ShoppingList.Migrations
                     b.Property<int>("Quantity");
 
                     b.Property<DateTime>("Time");
-
-                    b.Property<int>("UserId");
 
                     b.HasKey("Id");
 
