@@ -19,12 +19,12 @@ namespace ShoppingList.Services
         public string GetAllItemInfo()
         {
            var items = ItemRepository.GetInfo();
-           string text = null;
-            foreach (Item item in items)
-            {
-                text = text + JsonConvert.SerializeObject(item);
-            }
-            return text;
+           var json = JsonConvert.SerializeObject(items);
+           return json;
+        }
+        public void Add()
+        {
+            ItemRepository.Add();
         }
     }
 }

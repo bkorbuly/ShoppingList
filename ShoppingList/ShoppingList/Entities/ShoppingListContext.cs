@@ -15,11 +15,11 @@ namespace ShoppingList.Entities
         public DbSet<Item> Items { get; set; }
         public DbSet<User> Users { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<User>()
-                .HasMany(i => i.Items)
-                .WithOne(u => u.User).IsRequired();
-        }
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<User>()
+        //        .HasMany(i => i.Items)
+        //        .WithOne(u => u.User).IsRequired();
+        //}
     }
 }

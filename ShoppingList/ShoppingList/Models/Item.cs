@@ -13,6 +13,6 @@ namespace ShoppingList.Models
         public string Description { get; set; }
         public DateTime Time { get; set; }
         public bool IsUrgent { get; set; } = false;
-        public User User { get; set; }
+        public int UserId { get; set; }
     }
 }

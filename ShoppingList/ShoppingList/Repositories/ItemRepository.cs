@@ -24,7 +24,16 @@ namespace ShoppingList.Repositories
 
         public List<Item> GetInfo()
         {
-            return ShoppingListContext.Items.Where(x => x.User.Name.Equals("Balazs")).ToList();
+            return ShoppingListContext.Items.Select(x => x).ToList();
+        }
+
+        public void Add()
+        {
+            ShoppingListContext.Add
+                (
+                new Item { Id = 2, ItemName = "Leves", UserId = 1 }
+                );
+            ShoppingListContext.SaveChanges();
         }
     }
 }

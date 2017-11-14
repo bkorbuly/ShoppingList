@@ -20,7 +20,8 @@ namespace ShoppingList.Controllers
         [Route("api")]
         public IActionResult Index()
         {
-            return Json(new { KEK = "KEK" });
+            ItemService.Add();
+            return Json(ItemService.GetAllItemInfo());
         }
     }
 }

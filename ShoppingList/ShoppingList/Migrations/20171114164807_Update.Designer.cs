@@ -8,9 +8,10 @@ using ShoppingList.Entities;
 namespace ShoppingList.Migrations
 {
     [DbContext(typeof(ShoppingListContext))]
-    partial class ShoppingListContextModelSnapshot : ModelSnapshot
+    [Migration("20171114164807_Update")]
+    partial class Update
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
@@ -31,7 +32,7 @@ namespace ShoppingList.Migrations
 
                     b.Property<DateTime>("Time");
 
-                    b.Property<int>("UserId");
+                    b.Property<int?>("UserId");
 
                     b.HasKey("Id");
 
@@ -54,10 +55,9 @@ namespace ShoppingList.Migrations
 
             modelBuilder.Entity("ShoppingList.Models.Item", b =>
                 {
-                    b.HasOne("ShoppingList.Models.User")
+                    b.HasOne("ShoppingList.Models.User", "User")
                         .WithMany("Items")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("UserId");
                 });
         }
     }
