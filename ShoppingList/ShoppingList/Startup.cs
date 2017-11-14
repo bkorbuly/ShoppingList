@@ -11,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 using ShoppingList.Entities;
 using Microsoft.Extensions.Configuration;
 using System.IO;
+using ShoppingList.Services;
+using ShoppingList.Repositories;
 
 namespace ShoppingList
 {
@@ -25,7 +27,9 @@ namespace ShoppingList
                 .AddJsonFile("appsettings.json");
 
             Configuration = builder.Build();
-
+            services.AddMvc();
+            services.AddScoped<ItemRepository>();
+            services.AddScoped<ItemService>();
             services.AddDbContext<ShoppingListContext>(options => options.UseNpgsql(Configuration["ConnectionStrings:ShoppingListConnection"]));
         }
 
@@ -38,7 +42,7 @@ namespace ShoppingList
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseMvc();
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");

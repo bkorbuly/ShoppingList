@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ShoppingList.Entities;
+using ShoppingList.Models;
 
 namespace ShoppingList.Repositories
 {
@@ -19,6 +20,11 @@ namespace ShoppingList.Repositories
         {
             var user = ShoppingListContext.Users.FirstOrDefault(u => u.Name.Equals(name));
             return user != null ? true : false;
+        }
+
+        public List<Item> GetInfo()
+        {
+            return ShoppingListContext.Items.Where(x => x.User.Name.Equals("Balazs")).ToList();
         }
     }
 }
