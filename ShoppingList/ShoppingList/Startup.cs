@@ -24,7 +24,9 @@ namespace ShoppingList
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json");
 
-            services.AddDbContext<ShoppingListContext>(options => options.UseNpgsql(Configuration["Connectionstrings:ShoppingListConnection"]));
+            Configuration = builder.Build();
+
+            services.AddDbContext<ShoppingListContext>(options => options.UseNpgsql(Configuration["ConnectionStrings:ShoppingListConnection"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
