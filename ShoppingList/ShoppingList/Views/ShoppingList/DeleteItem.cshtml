@@ -1,0 +1,36 @@
+﻿@model System.Collections.Generic.List<ShoppingList.Models.Item>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Delete Item</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>ItemName</td>
+            <td>Quantity</td>
+            <td>Time</td>
+            <td>IsUrgent</td>
+            <td>UserId</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.ItemName</td>
+                <td>@item.Quantity</td>
+                <td>@item.Time</td>
+                <td>@item.IsUrgent</td>
+                <td>@item.UserId</td>
+                <td>
+                    <form action="/" method="delete">
+                        <input type="hidden" name="Id" value="@item.Id"/>
+                        <button type="submit">Delete Item</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

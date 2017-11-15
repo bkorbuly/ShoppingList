@@ -16,10 +16,10 @@ namespace ShoppingList.Services
             ItemRepository = itemRepository;
         }
 
-        public string GetAllItemInfo()
+        public List<Item> GetAllItemInfo()
         {
             var items = ItemRepository.GetAllInfo();
-            return JsonConvert.SerializeObject(items);
+            return items;
         }
         public void AddItem(string name, Item item)
         {

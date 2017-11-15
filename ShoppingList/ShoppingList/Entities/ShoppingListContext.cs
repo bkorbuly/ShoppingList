@@ -14,6 +14,7 @@ namespace ShoppingList.Entities
         }
         public DbSet<Item> Items { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Item> DeletedItems { get; set; } 
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
