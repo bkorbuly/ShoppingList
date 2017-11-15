@@ -24,13 +24,13 @@ namespace ShoppingList
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json");
+                .AddEnvironmentVariables();
 
             Configuration = builder.Build();
             services.AddMvc();
             services.AddScoped<ItemRepository>();
             services.AddScoped<ItemService>();
-            services.AddDbContext<ShoppingListContext>(options => options.UseNpgsql(Configuration["ConnectionStrings:ShoppingListConnection"]));
+            services.AddDbContext<ShoppingListContext>(options => options.UseNpgsql(Configuration.GetValue<string>("ConnectionString")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
