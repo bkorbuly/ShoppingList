@@ -1,0 +1,14 @@
+﻿@model ShoppingList.Models.User
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <form action="/AddUser/{name}" method="post">
+        <input type="hidden" value="@Model.Name" name="name"/>
+        <button type="submit">Add User</button>
+    </form>
+    <a href="/">Login page</a>
+</body>
+</html>

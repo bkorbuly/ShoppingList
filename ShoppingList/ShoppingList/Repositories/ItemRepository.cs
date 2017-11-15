@@ -19,7 +19,7 @@ namespace ShoppingList.Repositories
         public bool CheckUserExist(string name)
         {
             var user = ShoppingListContext.Users.FirstOrDefault(u => u.Name.Equals(name));
-            return user != null ? true : false;
+            return user != null;
         }
 
         public List<Item> GetAllInfo()
@@ -27,11 +27,25 @@ namespace ShoppingList.Repositories
             return ShoppingListContext.Items.Select(x => x).ToList();
         }
 
-        public void Add()
+        public int GetUserId(string name)
+        {
+            return ShoppingListContext.Users.Where(x => x.Name == name).Select(x => x.Id).FirstOrDefault();
+        }
+
+        public void AddItem(string name)
         {
             ShoppingListContext.Add
                 (
-                new Item { ItemName = "Leves", UserId = 2 }
+                new Item { ItemName = "Leves", Time =DateTime.Now, Quantity = 1, UserId = GetUserId(name)  }
+                );
+            ShoppingListContext.SaveChanges();
+        }
+
+        public void AddUser(string name)
+        {
+            ShoppingListContext.Add
+                (
+                new User { Name = name }
                 );
             ShoppingListContext.SaveChanges();
         }
