@@ -32,6 +32,10 @@ namespace ShoppingList.Repositories
             return ShoppingListContext.Users.Where(x => x.Name == name).Select(x => x.Id).FirstOrDefault();
         }
 
+        public List<Item> GetUserItems(string name)
+        {
+            return ShoppingListContext.Items.Where(x => x.UserId == GetUserId(name)).ToList();
+        }
         public void AddItem(string name)
         {
             ShoppingListContext.Add

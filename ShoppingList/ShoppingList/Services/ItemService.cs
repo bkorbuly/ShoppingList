@@ -18,8 +18,8 @@ namespace ShoppingList.Services
 
         public string GetAllItemInfo()
         {
-           var items = ItemRepository.GetAllInfo();
-           return JsonConvert.SerializeObject(items);
+            var items = ItemRepository.GetAllInfo();
+            return JsonConvert.SerializeObject(items);
         }
         public void AddItem(string name)
         {
@@ -34,6 +34,11 @@ namespace ShoppingList.Services
         public bool CheckUser(string name)
         {
             return ItemRepository.CheckUserExist(name);
+        }
+
+        public string GetUserItems(string name)
+        {
+            return JsonConvert.SerializeObject(ItemRepository.GetUserItems(name));
         }
     }
 }

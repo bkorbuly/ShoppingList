@@ -50,11 +50,17 @@ namespace ShoppingList.Controllers
             return LocalRedirect("/List/" + name);
         }
 
-        [Route("/List/{name}")]
+        [Route("/List")]
         public IActionResult List(string name)
         {
             ItemService.AddItem(name);
             return Content(ItemService.GetAllItemInfo());
+        }
+
+        [Route("/List/{name}")]
+        public IActionResult FilteredList(string name)
+        {
+            return Content(ItemService.GetUserItems(name));
         }
     }
 }
