@@ -18,9 +18,8 @@ namespace ShoppingList.Services
 
         public string GetAllItemInfo()
         {
-           var items = ItemRepository.GetInfo();
-           var json = JsonConvert.SerializeObject(items);
-           return json;
+           var items = ItemRepository.GetAllInfo();
+           return JsonConvert.SerializeObject(items);
         }
         public void Add()
         {

@@ -22,7 +22,7 @@ namespace ShoppingList.Repositories
             return user != null ? true : false;
         }
 
-        public List<Item> GetInfo()
+        public List<Item> GetAllInfo()
         {
             return ShoppingListContext.Items.Select(x => x).ToList();
         }
@@ -31,7 +31,7 @@ namespace ShoppingList.Repositories
         {
             ShoppingListContext.Add
                 (
-                new Item { Id = 2, ItemName = "Leves", UserId = 1 }
+                new Item { ItemName = "Leves", UserId = 2 }
                 );
             ShoppingListContext.SaveChanges();
         }
