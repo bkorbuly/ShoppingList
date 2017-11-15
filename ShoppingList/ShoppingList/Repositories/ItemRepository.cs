@@ -45,6 +45,13 @@ namespace ShoppingList.Repositories
             ShoppingListContext.SaveChanges();
         }
 
+        //public void DeleteItem(Item item, User user)
+        //{
+        //    ShoppingListContext.DeletedItems.Add(Description = item.Description, IsUrgent = item.IsUrgent, ItemName = item.ItemName, Quantity = item.Quantity, Time = DateTime.Now, UserId = GetUserId(name))
+        //    ShoppingListContext.Items.Remove(item.Id);
+        //    ShoppingListContext.SaveChanges();
+        //}
+
         public void AddUser(string name)
         {
             ShoppingListContext.Add

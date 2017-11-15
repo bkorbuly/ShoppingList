@@ -75,14 +75,24 @@ namespace ShoppingList.Controllers
         public IActionResult AddItem(string name, Item item)
         {
             ItemService.AddItem(name, item);
-            return RedirectToAction("List");
+            return RedirectToAction("/List");
         }
 
         [Route("/DeleteItem/{name}")]
         public IActionResult DeleteItem(string name)
         {
             var list = ItemService.GetAllItemInfo();
-            return View(list);
+            var user = new User() { Name = name };
+            var mix = new UserItemView() { user = user, listitem = list };
+            return View(mix);
         }
+
+        //[HttpDelete]
+        //[Route("/DeleteItem/{name}")]
+        //public IActionResult DeleteItem(Item item, User user)
+        //{
+        //    ItemService.DeleteItem(item, user);
+        //    return RedirectToAction("/List");
+        //}
     }
 }

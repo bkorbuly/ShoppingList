@@ -40,5 +40,10 @@ namespace ShoppingList.Services
         {
             return JsonConvert.SerializeObject(ItemRepository.GetUserItems(name));
         }
+
+        //public void DeleteItem(Item item, User user)
+        //{
+        //    ItemRepository.DeleteItem(item, user);
+        //}
     }
 }

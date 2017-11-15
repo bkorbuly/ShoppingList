@@ -1,4 +1,4 @@
-﻿@model System.Collections.Generic.List<ShoppingList.Models.Item>
+﻿@model ShoppingList.Models.UserItemView
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -14,7 +14,7 @@
             <td>IsUrgent</td>
             <td>UserId</td>
         </tr>
-        @foreach (var item in Model)
+        @foreach (var item in Model.listitem)
         {
             <tr>
                 <td>@item.Id</td>
@@ -24,8 +24,9 @@
                 <td>@item.IsUrgent</td>
                 <td>@item.UserId</td>
                 <td>
-                    <form action="/" method="delete">
+                    <form action="/DeleteItem/{name}" method="delete">
                         <input type="hidden" name="Id" value="@item.Id"/>
+                        <input type="hidden" name="name" value="@Model.user.Name" />
                         <button type="submit">Delete Item</button>
                     </form>
                 </td>
