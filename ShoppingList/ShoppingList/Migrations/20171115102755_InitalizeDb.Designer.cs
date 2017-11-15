@@ -8,8 +8,8 @@ using ShoppingList.Entities;
 namespace ShoppingList.Migrations
 {
     [DbContext(typeof(ShoppingListContext))]
-    [Migration("20171114164807_Update")]
-    partial class Update
+    [Migration("20171115102755_InitalizeDb")]
+    partial class InitalizeDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,7 +32,7 @@ namespace ShoppingList.Migrations
 
                     b.Property<DateTime>("Time");
 
-                    b.Property<int?>("UserId");
+                    b.Property<int>("UserId");
 
                     b.HasKey("Id");
 
@@ -55,9 +55,10 @@ namespace ShoppingList.Migrations
 
             modelBuilder.Entity("ShoppingList.Models.Item", b =>
                 {
-                    b.HasOne("ShoppingList.Models.User", "User")
+                    b.HasOne("ShoppingList.Models.User")
                         .WithMany("Items")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
         }
     }

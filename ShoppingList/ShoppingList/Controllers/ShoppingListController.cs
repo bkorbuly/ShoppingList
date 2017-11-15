@@ -16,9 +16,13 @@ namespace ShoppingList.Controllers
         {
             this.ItemService = itemService;
         }
-
-        [Route("api")]
+        [Route("")]
         public IActionResult Index()
+        {
+            return View();
+        }
+        [Route("api")]
+        public IActionResult Indexs()
         {
             ItemService.Add();
             return Json(ItemService.GetAllItemInfo());
