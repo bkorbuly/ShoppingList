@@ -30,7 +30,7 @@ namespace ShoppingList.Controllers
         {
             if (ItemService.CheckUser(name))
             {
-                return LocalRedirect("/List/" + name);
+                return LocalRedirect("/List");
             }
             return LocalRedirect("/AddUser/" + name);
         }
@@ -53,7 +53,6 @@ namespace ShoppingList.Controllers
         [Route("/List")]
         public IActionResult List(string name)
         {
-            ItemService.AddItem(name);
             return Content(ItemService.GetAllItemInfo());
         }
 
@@ -61,6 +60,21 @@ namespace ShoppingList.Controllers
         public IActionResult FilteredList(string name)
         {
             return Content(ItemService.GetUserItems(name));
+        }
+
+        [Route("/AddItem/{name}")]
+        public IActionResult AddItem(string name)
+        {
+            var user = new User() { Name = name };
+            return View(user);
+        }
+
+        [HttpPost]
+        [Route("/AddItem/{name}")]
+        public IActionResult AddItem(string name, Item item)
+        {
+            ItemService.AddItem(name, item);
+            return RedirectToAction("List");
         }
     }
 }

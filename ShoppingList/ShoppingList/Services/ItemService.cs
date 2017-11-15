@@ -21,9 +21,9 @@ namespace ShoppingList.Services
             var items = ItemRepository.GetAllInfo();
             return JsonConvert.SerializeObject(items);
         }
-        public void AddItem(string name)
+        public void AddItem(string name, Item item)
         {
-            ItemRepository.AddItem(name);
+            ItemRepository.AddItem(name, item);
         }
 
         public void AddUser(string name)

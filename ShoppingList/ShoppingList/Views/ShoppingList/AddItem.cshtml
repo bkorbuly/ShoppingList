@@ -1,0 +1,18 @@
+﻿@model ShoppingList.Models.User
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Add Item</title>
+</head>
+<body>
+    <h1>Add Item</h1>
+    <form action="/AddItem/{name}" method="post">
+        <input type="hidden" name="name" value="@Model.Name"/>
+        <label for="itemname">Itemname:</label><input type="text" name="ItemName" id="itemname"/>
+        <label for="quantity">Quantity:</label><input type="text" name="Quantity" id="quantity"/>
+        <label for="description">Description:</label><input type="text" name="Description" id="description"/>
+        <label for="isurgent">Urgent:</label><input type="radio" name="IsUrgent" value="true" id="isurgent"/>
+        <button type="submit">Add new item to list</button>
+    </form>
+</body>
+</html>

@@ -36,11 +36,11 @@ namespace ShoppingList.Repositories
         {
             return ShoppingListContext.Items.Where(x => x.UserId == GetUserId(name)).ToList();
         }
-        public void AddItem(string name)
+        public void AddItem(string name, Item item)
         {
             ShoppingListContext.Add
                 (
-                new Item { ItemName = "Leves", Time =DateTime.Now, Quantity = 1, UserId = GetUserId(name)  }
+                new Item { Description = item.Description, IsUrgent = item.IsUrgent, ItemName = item.ItemName, Quantity = item.Quantity, Time = DateTime.Now, UserId = GetUserId(name)}
                 );
             ShoppingListContext.SaveChanges();
         }
